@@ -18,6 +18,19 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<name>nexus-release</name>
+			<url>http://localhost:8081/repository/nexus-release/</url>
+		</repository>
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>nexus-snapshot</name>
+            <url>http://localhost:8081/repository/nexus-snapshot/</url>
+        </snapshotRepository>
+	</distributionManagement>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -42,6 +55,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
